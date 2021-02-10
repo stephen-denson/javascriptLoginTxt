@@ -1,26 +1,35 @@
 let saveFile = () => {
-	const name = document.getElementBuId('txtName')
-	const email = document.getElementBuId('txtEmail')
-	const password = document.getElementBuId('txtPassword')
-}
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('txtName');
+        
+        const email = document.getElementById('txtEmail');
+        
+        const password = document.getElementById('password');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Name: ' + name.value + ' \r\n ' + 
+            
+            'Email: ' + email.value + ' \r\n ' + 
+             
+            'Password: ' + password.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
 
-let data = 
-	'\r Name: ' + name.value +'\r\n' +
-	'\r Email: ' + email.value + '\r\n' +
-	'\r Password' + password.value + '\r\n';
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
 
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
 
-const textToBlob = new Blob([data], { type: 'text/plain'});
-const sFileName = formData.txt;
-
-let newLink = document.createElement("a");
-newLink.download = sFileName;
-
-if (window.webkitURL != null) {
-	newLink.href = window.webkitURL.createObjectURL(textToBlob);
-}
-else {
-	newLink.href = window.URL.createObjectURL(textToBlob);
-	newLink.style.display = "none";
-	document.body.appendChild(newLink);
-}
+        newLink.click(); 
+    }
