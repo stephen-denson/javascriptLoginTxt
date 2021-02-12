@@ -1,0 +1,71 @@
+
+body{
+	background-image: url(mountains.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.login-page{
+	width: 360px;
+	padding: 10% 0 0;
+	margin: auto;
+}
+
+.form{
+	position: relative;
+	z-index: 1;
+	background: rgba(255,255,255,0.4);	
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 50px;
+	text-align: center;
+	border-radius: 15px;
+}
+
+.form input{
+	font-family: "Helvetica", sans-serif;
+	outline: 1;
+	background: #ebeaea;
+	width: 100%;
+	border: 0;
+	margin: 0 0 16px;
+	padding: 13px;
+	box-sizing: border-box;
+	font-size: 15px
+}
+
+.form button{
+	font-family: "Helvetica", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #5a86d5;
+	width: 100%;
+	border: 0;
+	padding: 13px;
+	color: #ffffff;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.form button:hover,.form button:active{
+	background: #283b5e;
+}
+
+.form .message{
+	margin: 15px;
+	color: #ffffff;
+}
+
+.form .message a{
+	color: #dce7fb;
+	text-decoration: none;
+}
+
+.form .message a:hover{
+	color: #1f66e5;
+}
+
+.form .register-form{
+	display: none;
+}

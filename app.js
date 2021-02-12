@@ -1,35 +1,13 @@
-let saveFile = () => {
-    	
-        // Get the data from each element on the form.
-    	const name = document.getElementById('txtName');
-        
-        const email = document.getElementById('txtEmail');
-        
-        const password = document.getElementById('password');
-        
-        // This variable stores all the data.
-        let data = 
-            '\r Name: ' + name.value + ' \r\n ' + 
-            
-            'Email: ' + email.value + ' \r\n ' + 
-             
-            'Password: ' + password.value;
-        
-        // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'formData.txt';	   // The file to save the data.
+var express = require('express');
+var todoController = require('./controllers/todoController');
 
-        let newLink = document.createElement("a");
-        newLink.download = sFileName;
+var app = express();
 
-        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        }
-        else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
+app.set('view engine', 'ejs');
 
-        newLink.click(); 
-    }
+app.use(express.static('./public'));
+
+todoController(app);
+
+app.listen(3000);
+console.log('port 3000');
