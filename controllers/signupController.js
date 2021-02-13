@@ -1,3 +1,7 @@
+var fs = require('fs');
+var flash = require('req-flash');
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false});
 module.exports = function(app){
 
 app.get('/signup', function(req, res){
@@ -6,6 +10,16 @@ app.get('/signup', function(req, res){
 });
 
 app.post('/signup', function(req, res){
+	console.log(req.body);
+	fs.writeFile('data.txt', req.body.username + "\n" + req.body.pword + "\n" + req.body.email + "\n", function (err){
+		if(err){
+			req.flash("Success", "There was some problem");
+			res.redirect("/signup")
+		}
+		console.log("Credentials stored");
+		req.flash("Success", "Registration Complete");
+		res.redirect("/");
+	})
 	
 });
 

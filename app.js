@@ -1,10 +1,21 @@
 var express = require('express');
 var signupController = require('./controllers/signupController');
 var loginController = require('./controllers/loginController');
+const bodyParser = require('body-parser');
+const {check, validationResult } = require('express-validator');
+var fs = require('fs');
+var flash = require('connect-flash');
+var session = require('express-session');
 
 var app = express();
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(flash());
+
 
 app.set('view engine', 'ejs');
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false});
 
 app.use(express.static('./public'));
 

@@ -8,16 +8,15 @@
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form">
-				<input type="text" placeholder="Enter your Username" name="username" required />
-				<input type="text" placeholder="Enter your password" name="pword" required />
-				<input type="text" placeholder="Enter you E-mail ID" name="email" required />
+			<form class="register-form" action="/signup" method="POST">
+				<input type="text" placeholder="Enter your Username" name="username" id="username" required />
+				<input type="password" placeholder="Enter your password" name="pword" id="pword" required />
+				<input type="text" placeholder="Enter you E-mail ID" name="email" id = "email" required />
 				<button type="submit">Create Account</button>
 				<p class="message">Already a member? <a href="/">Login</a>
 				</p>
 			</form>			
 		</div>
 	</div>
-	
-	<script src="app.js"></script>
+		
 </body>
