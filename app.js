@@ -6,10 +6,18 @@ const {check, validationResult } = require('express-validator');
 var fs = require('fs');
 var flash = require('connect-flash');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(cookieParser());
+app.use(session({
+    secret: "secret123",
+    cookie: { maxAge: 60000 },
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(flash());
 
 
