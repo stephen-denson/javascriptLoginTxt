@@ -13,24 +13,16 @@ rl.on('line', function(line){
 });
 
 rl.on('close', function(){
+
 });
 
 module.exports = function(app){
 
-app.get('/', function(req, res){
-	res.render('login');
-
-});
-
-app.post('/', function(req, res){
-	if (req.body.username == arr[0] && req.body.password == arr[1]){
-		res.render("welcome");
+app.get('/welcome', function(req, res){
+	var options = {
+		valu: arr[0]
 	};
+	res.render('welcome',{val:valu});
 
 });
-
-app.delete('/', function(req, res){
-
-});
-
-};	
+}	
