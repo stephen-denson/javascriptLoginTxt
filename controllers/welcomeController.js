@@ -1,3 +1,5 @@
+//declaring requirements
+
 var fs = require('fs');
 var readline = require('readline');
 var stream = require('stream');
@@ -8,6 +10,7 @@ var outstream = new stream;
 var rl = readline.createInterface(instream, outstream);
 var arr = [];
 
+//declaring readline function
 rl.on('line', function(line){
 	arr.push(line);
 });

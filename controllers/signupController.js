@@ -1,3 +1,5 @@
+//declaring requirements
+
 var fs = require('fs');
 var flash = require('req-flash');
 const bodyParser = require('body-parser');
@@ -9,6 +11,7 @@ app.get('/signup', function(req, res){
 
 });
 
+//storing data in txt file
 app.post('/signup', function(req, res){
 	console.log(req.body);
 	fs.writeFile('data.txt', req.body.username + "\n" + req.body.pword + "\n" + req.body.email + "\n", function (err){

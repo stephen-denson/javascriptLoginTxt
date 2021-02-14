@@ -1,3 +1,5 @@
+//declaring requirements
+
 var fs = require('fs');
 var readline = require('readline');
 var stream = require('stream');
@@ -8,6 +10,7 @@ var outstream = new stream;
 var rl = readline.createInterface(instream, outstream);
 var arr = [];
 
+// declaring readline function to deal with text file
 rl.on('line', function(line){
 	arr.push(line);
 });
@@ -22,7 +25,9 @@ app.get('/', function(req, res){
 
 });
 
+//validating login details
 app.post('/', function(req, res){
+
 	if (req.body.username == arr[0] && req.body.password == arr[1]){
 		const nameuser = arr[0];
 		res.redirect("/welcome");
@@ -33,8 +38,4 @@ app.post('/', function(req, res){
 
 });
 
-app.delete('/', function(req, res){
-
-});
-
-};	
+};
