@@ -24,7 +24,11 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
 	if (req.body.username == arr[0] && req.body.password == arr[1]){
-		res.render("welcome");
+		const nameuser = arr[0];
+		res.redirect("/welcome");
+	}
+	else{
+		res.redirect("/signup")
 	};
 
 });

@@ -19,10 +19,8 @@ rl.on('close', function(){
 module.exports = function(app){
 
 app.get('/welcome', function(req, res){
-	var options = {
-		valu: arr[0]
-	};
-	res.render('welcome',{val:valu});
+	const nameuser = arr[0];	
+	res.render('welcome', {nameuser:nameuser});
 
 });
 }	

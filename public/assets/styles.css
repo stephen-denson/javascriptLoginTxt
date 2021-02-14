@@ -8,7 +8,7 @@ body{
 
 .login-page{
 	width: 360px;
-	padding: 10% 0 0;
+	padding: 8% 0 0;
 	margin: auto;
 }
 
@@ -75,5 +75,15 @@ h3{
 	font-family: "Helvetica", sans-serif;
 	font-size: 1.5em;
 	color: #ffffff;
+	margin-block-start: 0;
+	margin-block-end: 0;
 
+}
+
+h2{
+	font-family: "Helvetica", sans-serif;
+	font-size: 3em;
+	color: #ffffff;
+	margin-block-start: 0;
+	margin-block-end: 0.7em;
 }
